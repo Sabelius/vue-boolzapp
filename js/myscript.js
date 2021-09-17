@@ -96,7 +96,6 @@ let root = new Vue({
 
         selectChat : function(avatarIndex){
             this.selectAvatar = avatarIndex;
-        }
-
-    },
+        },
+    }
 });

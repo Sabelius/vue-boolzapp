@@ -15,7 +15,7 @@
 
 <body>
     <div class="container-fluid" id="root">
-        <div class="container ">
+        <div class="container">
             <div class="row">
                 <div class="col-5 p-2">
                     <div class="d-flex">
@@ -24,7 +24,6 @@
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt pl-3"></i>
                         <i class="fas fa-ellipsis-v pl-3"></i>
-                    
                     </div>
                 </div>
             </div>
@@ -39,6 +38,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-5 p-2">
                     <div class="d-flex">
@@ -50,16 +50,29 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-5 p-2">
-                    <div class="d-flex pt-4 contact" v-for="(contact, index) in contacts" :class="{'active' : index == selectAvatar}"
-                    @click="selectChat(index)"> {{ contact.name}}
+                <div class="col-5 p-2 contacts-chat">
+                    <div class="d-flex pt-4 contact" v-for="(contact, index) in contacts"
+                        :class="{'active' : index == selectAvatar}" @click="selectChat(index)">{{ contact.name}}
                     </div>
                 </div>
             </div>
         </div>
 
-
+        <div class="container">
+            <div class="row">
+                <div class="col-7 p-2">
+                    <div class="d-flex">
+                        <img class="user-image" src="img/avatar_1.jpg" alt="general-user">
+                        <h6 class=" user-name pl-2">Michele</h6>
+                        <i class="fas fa-search fa-search2"></i>
+                        <i class="fas fa-paperclip pl-3"></i>
+                        <i class="fas fa-ellipsis-v pl-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 
 
 
