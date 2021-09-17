@@ -99,12 +99,34 @@
     width: 65%;
     height: 100%;
 }
-.text-area-container{
-    background-image: url(../img/mine.jpg);
-    height: calc(100% - 60px);
-}
 .last-message{
     position: relative;
     padding: 0 30px 0 0;
     color: lightgray;
+}
+.text-area-container{
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 60px);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.message-chat{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    padding: 10px 10px 20px 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.message-green {
+    align-self: flex-end;
+    background-color: rgb(81, 194, 81);
+}
+.message-white{
+    background-color: white;
+}
+.text-content{
+    font-size: 12px;
 }

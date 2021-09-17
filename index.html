@@ -45,7 +45,7 @@
                 </div>
                 <div class="users-chat">
                     <div class="contact" v-for="(contact, index) in contacts"
-                        :class="{'active' : index == selectAvatar}" @click="selectChat(index)">
+                        :class="{'active' : index == selectAvatar}">
                         <img :src="filteredImage(contact)" class="user-image">
                         <span class=" user-name pl-2">{{ contact.name}} <h6 class="last-message">{{ contact.messages.slice(-1)[0].text }}</h6></span>
                     </div>
@@ -66,6 +66,10 @@
                     </div>
                 </div>
                 <div class="text-area-container">
+                    <div class="message-chat" v-for="(message, index) in contacts[textingContact].messages" 
+                    :class="(contacts[textingContact].messages[index].status == 'sent') ? 'message-green' : 'message-white'">
+                     <span class="text-content">{{ contacts[textingContact].messages[index].text }}</span>
+                    </div>
                 </div>
             </div>
         </div>

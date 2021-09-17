@@ -90,6 +90,7 @@ let root = new Vue({
         ],
 
         selectAvatar: 0,
+        textingContact: 0,
     },
 
     methods: {
