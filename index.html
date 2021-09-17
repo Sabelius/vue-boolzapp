@@ -16,11 +16,11 @@
         <div class="all-container">
             <div class="left-side">
                 <div class="user-container">
-                    <div class="user-icons">
+                    <div class="user-stuff">
                         <img src="img/avatar_io.jpg" class="user-image">
                         <span class="user-name">Nome Utente</span>
                     </div>
-                    <div class="rightuser-icons">
+                    <div class="user-icons">
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
@@ -55,11 +55,11 @@
 
             <div class="right-side">
                 <div class="user-container">
-                    <div class="user-icons">
+                    <div class="user-stuff">
                         <img src="img/avatar_1.jpg" class="user-image">
                         <span class="user-name">Michele</span>
                     </div>
-                    <div class="rightuser-icons">
+                    <div class="user-icons">
                         <i class="fas fa-search"></i>
                         <i class="fas fa-paperclip"></i>
                         <i class="fas fa-ellipsis-v"></i>
@@ -70,6 +70,11 @@
                     :class="(contacts[textingContact].messages[index].status == 'sent') ? 'message-green' : 'message-white'">
                      <span class="text-content">{{ contacts[textingContact].messages[index].text }}</span>
                     </div>
+                </div>
+                <div class="texting-area">
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
                 </div>
             </div>
         </div>
