@@ -1,40 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(35, 177, 146) 0%, rgb(35, 177, 146) 15%, rgb(241, 241, 241) 15%, rgb(241, 241, 241) 100%);
+    background-repeat: no-repeat;
+}
 
+.all-container{
+    display: flex;
+    width: 85%;
+    height: 95%;
+}
+
+.left-side{
+    width:40%;
+    height: 100%;
+}
+.user-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 10px;
+    background-color: rgb(221, 220, 220);
+}
 .user-image{
-    height: 40px;
     width: 40px;
+    height: 40px;
     border-radius: 20px;
 }
+.user-icons{
+    display: flex;
+    align-items: center;
+}
 .user-name{
-    align-self: center;
+    padding-left: 10px;
 }
-.fa-circle-notch{
-    padding-left: 220px;
+.rightuser-icons i{
+    margin-right: 10px;
+    color: rgb(175, 175, 175);
 }
-.fa-search2{
-    padding-left: 460px;
+.notification{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(27, 174, 211);
 }
-.fas{
-    color: lightgray;
-    align-self: center;
-}
-
-.fa-bell-slash{
+.bell-icon{
     font-size: 30px;
     color: white;
 }
-.left-container{
-    background-color: rgb(21, 196, 219);
+.notification-text{
+    padding-left: 10px;
 }
-.right-container{
-    background-image: url(../img/mine.jpg);
-    height: calc(100vh - 62px);
+.search-bar{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(255, 254, 254);
 }
-.input-search{
-    width: 350px;
+.search-icon{
+    font-size: 20px;
+    color: lightgrey;
+}
+.bar{
+    padding-left: 10px;
+}
+.bar input{
+    width: 310px;
     border-radius: 10px;
-    border: none;
+    border:none;
+    height: 30px;
 }
-.contacts-chat{
-    overflow: scroll;
-    height: calc(100vh - 165px);
+.users-chat{
+    width: 100%;
+    height: calc(100% - 160px);
+    background-color: rgb(255, 254, 254);
+    overflow-y: scroll;
+    border-bottom: 1px solid lightgray;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 10px 10px 10px 20px;
 }

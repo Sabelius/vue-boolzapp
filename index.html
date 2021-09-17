@@ -6,69 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Boolzapp</title>
 </head>
 
 <body>
-    <div class="container-fluid" id="root">
-        <div class="container">
-            <div class="row">
-                <div class="col-5 p-2">
-                    <div class="d-flex">
-                        <img class="user-image" src="img/avatar_io.jpg" alt="general-user">
-                        <h6 class=" user-name pl-2">Nome Utente</h6>
+    <div id="root">
+        <div class="all-container">
+            <div class="left-side">
+                <div class="user-container">
+                    <div class="user-icons">
+                        <img src="img/avatar_io.jpg" class="user-image">
+                        <span class="user-name">Nome Utente</span>
+                    </div>
+                    <div class="rightuser-icons">
                         <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt pl-3"></i>
-                        <i class="fas fa-ellipsis-v pl-3"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-5 p-2 left-container">
-                    <div class="d-flex">
+                <div class="notification">
+                    <div class="bell-icon">
                         <i class="fas fa-bell-slash"></i>
-                        <div class="pl-2">
-                            <h6>Ricevi notifiche di nuovi messaggi</h6>
-                            <a href="#">Attiva le notifiche desktop</a>
-                        </div>
+                    </div>
+                    <div class="notification-text">
+                        <h5>Ricevi notifiche di nuovi messaggi</h5>
+                        <a href="#">Attiva le notifiche desktop</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-5 p-2">
-                    <div class="d-flex">
+                <div class="search-bar">
+                    <div class="search-icon">
                         <i class="fas fa-search"></i>
-                        <div class="pl-3">
-                            <input class="input-search" type="text" placeholder="Cerca o inizia una nuova chat">
-                        </div>
+                    </div>
+                    <div class="bar">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-5 p-2 contacts-chat">
-                    <div class="d-flex pt-4 contact" v-for="(contact, index) in contacts"
-                        :class="{'active' : index == selectAvatar}" @click="selectChat(index)">{{ contact.name}}
+                <div class="users-chat">
+                    <div class="contact" v-for="(contact, index) in contacts"
+                        :class="{'active' : index == selectAvatar}" @click="selectChat(index)">
+                        <img :src="filteredImage(contact)" class="user-image">
+                        <span class=" user-name pl-2">{{ contact.name}}</span>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-7 p-2">
-                    <div class="d-flex">
-                        <img class="user-image" src="img/avatar_1.jpg" alt="general-user">
-                        <h6 class=" user-name pl-2">Michele</h6>
-                        <i class="fas fa-search fa-search2"></i>
-                        <i class="fas fa-paperclip pl-3"></i>
-                        <i class="fas fa-ellipsis-v pl-3"></i>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
