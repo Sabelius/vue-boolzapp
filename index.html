@@ -14,8 +14,55 @@
 </head>
 
 <body>
-    
-    
+    <div class="container-fluid" id="root">
+        <div class="container ">
+            <div class="row">
+                <div class="col-5 p-2">
+                    <div class="d-flex">
+                        <img class="user-image" src="img/avatar_io.jpg" alt="general-user">
+                        <h6 class=" user-name pl-2">Nome Utente</h6>
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt pl-3"></i>
+                        <i class="fas fa-ellipsis-v pl-3"></i>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5 p-2 left-container">
+                    <div class="d-flex">
+                        <i class="fas fa-bell-slash"></i>
+                        <div class="pl-2">
+                            <h6>Ricevi notifiche di nuovi messaggi</h6>
+                            <a href="#">Attiva le notifiche desktop</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5 p-2">
+                    <div class="d-flex">
+                        <i class="fas fa-search"></i>
+                        <div class="pl-3">
+                            <input class="input-search" type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5 p-2">
+                    <div class="d-flex pt-4 contact" v-for="(contact, index) in contacts" :class="{'active' : index == selectAvatar}"
+                    @click="selectChat(index)"> {{ contact.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
 
 
 

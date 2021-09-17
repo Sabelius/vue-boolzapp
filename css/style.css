@@ -1,0 +1,29 @@
+
+.user-image{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+.user-name{
+    align-self: center;
+}
+.fa-circle-notch{
+    padding-left: 150px;
+}
+.fas{
+    color: lightgray;
+    align-self: center;
+}
+
+.fa-bell-slash{
+    font-size: 30px;
+    color: white;
+}
+.left-container{
+    background-color: rgb(21, 196, 219);
+}
+.input-search{
+    width: 350px;
+    border-radius: 10px;
+    border: none;
+}

@@ -88,9 +88,15 @@ let root = new Vue({
                 ],
             },
         ],
+
+        selectAvatar: 0,
     },
 
     methods: {
+
+        selectChat : function(avatarIndex){
+            this.selectAvatar = avatarIndex;
+        }
 
     },
 });
