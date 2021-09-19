@@ -47,7 +47,9 @@
                     <div class="contact" v-for="(contact, index) in contacts"
                         :class="{'active' : index == selectAvatar}">
                         <img :src="filteredImage(contact)" class="user-image">
-                        <span class=" user-name pl-2">{{ contact.name}} <h6 class="last-message">{{ contact.messages.slice(-1)[0].text }}</h6></span>
+                        <span class=" user-name pl-2">{{ contact.name }}  
+                        <span class="last-date-message">{{ contact.messages.slice(-1)[0].date }}</span>
+                        <h6 class="last-message">{{ contact.messages.slice(-1)[0].text }}</h6></span> 
                     </div>
                     
                 </div>
@@ -57,7 +59,8 @@
                 <div class="user-container">
                     <div class="user-stuff">
                         <img src="img/avatar_1.jpg" class="user-image">
-                        <span class="user-name">Michele</span>
+                        <span class="user-name">Michele 
+                        <h6 class="last-access-date">Ultimo accesso oggi alle {{ contacts[0].messages[2].date }}</h6></span>
                     </div>
                     <div class="user-icons">
                         <i class="fas fa-search"></i>
@@ -69,6 +72,7 @@
                     <div class="message-chat" v-for="(message, index) in contacts[textingContact].messages" 
                     :class="(contacts[textingContact].messages[index].status == 'sent') ? 'message-green' : 'message-white'">
                      <span class="text-content">{{ contacts[textingContact].messages[index].text }}</span>
+                     <h6 class="date-content">{{ contacts[textingContact].messages[index].date }}</h6>
                     </div>
                 </div>
                 <div class="texting-area">
