@@ -97,10 +97,11 @@ let root = new Vue({
 
         selectChat : function(avatarIndex){
             this.selectAvatar = avatarIndex;
+            return this.selectAvatar;
         },
 
         filteredImage : function(element){
             return "img/avatar" + element.avatar + ".jpg";
-        }
+        },
     }
 });

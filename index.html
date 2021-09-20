@@ -45,13 +45,12 @@
                 </div>
                 <div class="users-chat">
                     <div class="contact" v-for="(contact, index) in contacts"
-                        :class="{'active' : index == selectAvatar}">
+                        :class="{'active' : index == selectAvatar}" @click="selectChat(index)">
                         <img :src="filteredImage(contact)" class="user-image">
-                        <span class=" user-name pl-2">{{ contact.name }}  
-                        <span class="last-date-message">{{ contact.messages.slice(-1)[0].date }}</span>
+                        <span class=" user-name pl-2">{{ contact.name }} 
+                        <span class="last-date-message">{{ contact.messages.slice(-1)[0].date }}</span> 
                         <h6 class="last-message">{{ contact.messages.slice(-1)[0].text }}</h6></span> 
                     </div>
-                    
                 </div>
             </div>
 
