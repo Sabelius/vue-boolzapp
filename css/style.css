@@ -117,7 +117,7 @@
     overflow-y: scroll;
 }
 .message-chat{
-    width: 200px;
+    width: 250px;
     height: 45px;
     padding: 10px 10px 20px 10px;
     margin-bottom: 10px;
@@ -135,7 +135,7 @@
 }
 .date-content{
     font-size: 8px;
-    padding: 5px 0 0 110px;
+    padding: 5px 0 0 160px;
     color: lightgray;
 }
 .texting-area{

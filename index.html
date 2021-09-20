@@ -68,10 +68,10 @@
                     </div>
                 </div>
                 <div class="text-area-container">
-                    <div class="message-chat" v-for="(message, index) in contacts[textingContact].messages" 
-                    :class="(contacts[textingContact].messages[index].status == 'sent') ? 'message-green' : 'message-white'">
-                     <span class="text-content">{{ contacts[textingContact].messages[index].text }}</span>
-                     <h6 class="date-content">{{ contacts[textingContact].messages[index].date }}</h6>
+                    <div class="message-chat" v-for="(message, index) in contacts[selectAvatar].messages" 
+                    :class="(message.status == 'sent') ? 'message-green' : 'message-white'">
+                     <span class="text-content">{{ message.text }}</span>
+                     <h6 class="date-content">{{ message.date }}</h6>
                     </div>
                 </div>
                 <div class="texting-area">
