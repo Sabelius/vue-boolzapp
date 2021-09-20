@@ -107,6 +107,7 @@ let root = new Vue({
         addNewMessage: function (selectAvatar) {
             let newTextMessage;
             newTextMessage = {
+                date: '10/01/2020 15:32:00',
                 text: this.newMessage,
                 status: 'sent',
             }
