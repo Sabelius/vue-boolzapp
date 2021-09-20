@@ -76,7 +76,7 @@
                 </div>
                 <div class="texting-area">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keydown.enter="addNewMessage(selectAvatar)">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>

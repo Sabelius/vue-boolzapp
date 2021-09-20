@@ -47,7 +47,7 @@ let root = new Vue({
                     }
                 ],
             },
-        
+
             {
                 name: 'Samuele',
                 avatar: '_3',
@@ -90,17 +90,28 @@ let root = new Vue({
         ],
 
         selectAvatar: 0,
+        newMessage: "",
     },
 
     methods: {
 
-        selectChat : function(avatarIndex){
+        selectChat: function (avatarIndex) {
             this.selectAvatar = avatarIndex;
             return this.selectAvatar;
         },
 
-        filteredImage : function(element){
+        filteredImage: function (element) {
             return "img/avatar" + element.avatar + ".jpg";
         },
+
+        addNewMessage: function (selectAvatar) {
+            let newTextMessage;
+            newTextMessage = {
+                text: this.newMessage,
+                status: 'sent',
+            }
+            this.contacts[selectAvatar].messages.push(newTextMessage);
+            this.newMessage="";
+        }
     }
 });
