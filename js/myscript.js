@@ -91,6 +91,7 @@ let root = new Vue({
 
         selectAvatar: 0,
         newMessage: "",
+        // search: "", appoggio per la funzione filtro
     },
 
     methods: {
@@ -112,18 +113,25 @@ let root = new Vue({
                 status: 'sent',
             }
             this.contacts[selectAvatar].messages.push(newTextMessage);
-            this.newMessage="";
-            
+            this.newMessage = "";
+
             let newContacts = this.contacts[selectAvatar];
-            setTimeout( function() {
+            setTimeout(function () {
                 let newMessageReceived;
                 newMessageReceived = {
-                date: '10/01/2020 15:32:01',
-                text: "Ok",
-                status: 'received',};
+                    date: '10/01/2020 15:32:01',
+                    text: "Ok",
+                    status: 'received',
+                };
 
                 newContacts.messages.push(newMessageReceived);
             }, 1000);
         },
+
+        // filterChat: function() {
+        //     return this.contacts.filter(element => {
+        //         return element.name.toLowerCase().includes(this.search.toLowerCase());
+        //     });
+        // },   funzione filtro. Capire modifiche da effettuare affinchè tutte le componenti funzionino.
     },
 });
