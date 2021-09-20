@@ -113,6 +113,15 @@ let root = new Vue({
             }
             this.contacts[selectAvatar].messages.push(newTextMessage);
             this.newMessage="";
-        }
-    }
+            
+            let newMessageReceived;
+            setTimeout(
+                newMessageReceived = {
+                date: '10/01/2020 15:32:01',
+                text: "Ok",
+                status: 'received',
+            }, 1000);
+            this.contacts[selectAvatar].messages.push(newMessageReceived);
+        },
+    },
 });
