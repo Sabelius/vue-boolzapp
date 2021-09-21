@@ -94,6 +94,12 @@ let root = new Vue({
         search: "",
     },
 
+    watch: {
+        search: function (value) {
+            this.selectAvatar = 0;
+        }
+    },
+
     methods: {
 
         selectChat: function (avatarIndex) {
