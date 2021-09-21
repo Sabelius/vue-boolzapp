@@ -40,12 +40,11 @@
                         <i class="fas fa-search"></i>
                     </div>
                     <div class="bar">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
-                        <!-- v-model="search" -->
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search"> 
                     </div>
                 </div>
                 <div class="users-chat">
-                    <div class="contact" v-for="(contact, index) in contacts" 
+                    <div class="contact" v-for="(contact, index) in filterChat" 
                         :class="{'active' : index == selectAvatar}" @click="selectChat(index)">
                         <img :src="filteredImage(contact)" class="user-image">
                         <span class="user-name">{{ contact.name }} 
@@ -58,9 +57,9 @@
             <div class="right-side">
                 <div class="user-container">
                     <div class="user-stuff">
-                        <img :src="'img/avatar' + contacts[selectAvatar].avatar + '.jpg'" class="user-image">
-                        <span class="user-name">{{ contacts[selectAvatar].name }}
-                        <h6 class="last-access-date">Ultimo accesso oggi alle {{ contacts[selectAvatar].messages.slice(-1)[0].date }}</h6></span>
+                        <img :src="'img/avatar' + filterChat[selectAvatar].avatar + '.jpg'" class="user-image">
+                        <span class="user-name">{{ filterChat[selectAvatar].name }}
+                        <h6 class="last-access-date">Ultimo accesso oggi alle {{ filterChat[selectAvatar].messages.slice(-1)[0].date }}</h6></span>
                     </div>
                     <div class="user-icons">
                         <i class="fas fa-search"></i>
@@ -69,7 +68,7 @@
                     </div>
                 </div>
                 <div class="text-area-container">
-                    <div class="message-chat" v-for="(message, index) in contacts[selectAvatar].messages" 
+                    <div class="message-chat" v-for="(message, index) in filterChat[selectAvatar].messages" 
                     :class="(message.status == 'sent') ? 'message-green' : 'message-white'">
                      <span class="text-content">{{ message.text }}</span>
                      <h6 class="date-content">{{ message.date }}</h6>

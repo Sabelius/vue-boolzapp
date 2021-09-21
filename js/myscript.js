@@ -91,7 +91,7 @@ let root = new Vue({
 
         selectAvatar: 0,
         newMessage: "",
-        // search: "",  
+        search: "",  
     },
 
     methods: {
@@ -112,10 +112,10 @@ let root = new Vue({
                 text: this.newMessage,
                 status: 'sent',
             }
-            this.contacts[selectAvatar].messages.push(newTextMessage);
+            this.filterChat[selectAvatar].messages.push(newTextMessage);
             this.newMessage = "";
 
-            let newContacts = this.contacts[selectAvatar];
+            let newContacts = this.filterChat[selectAvatar];
             setTimeout(function () {
                 let newMessageReceived;
                 newMessageReceived = {
@@ -127,11 +127,13 @@ let root = new Vue({
                 newContacts.messages.push(newMessageReceived);
             }, 1000);
         },
+    },
 
-        // filterChat() {
-        //     return this.contacts.filter(element => {
-        //         return element.name.toLowerCase().includes(this.search.toLowerCase());
-        //     });
-        // },   
+    computed: {
+        filterChat() {
+            return this.contacts.filter(element => {
+                return element.name.toLowerCase().includes(this.search.toLowerCase());
+            });
+        },   
     },
 });
