@@ -41,18 +41,16 @@
                     </div>
                     <div class="bar">
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
-                        <!-- v-model="search" da aggiungere all input sopra per attivare il filtro -->
+                        <!-- v-model="search" -->
                     </div>
                 </div>
                 <div class="users-chat">
                     <div class="contact" v-for="(contact, index) in contacts" 
                         :class="{'active' : index == selectAvatar}" @click="selectChat(index)">
-                        <!-- cambiare contacts nel vfor sopra con la funzione filtro 
-                        per far si che la ricerca contatti funzioni. Capire cosa modificare perchè il resto funzioni. -->
                         <img :src="filteredImage(contact)" class="user-image">
-                        <span class=" user-name pl-2">{{ contact.name }} 
+                        <span class="user-name">{{ contact.name }} 
+                        <h6 class="last-message">{{ contact.messages.slice(-1)[0].text }}</h6></span>
                         <span class="last-date-message">{{ contact.messages.slice(-1)[0].date }}</span> 
-                        <h6 class="last-message">{{ contact.messages.slice(-1)[0].text }}</h6></span> 
                     </div>
                 </div>
             </div>

@@ -91,7 +91,7 @@ let root = new Vue({
 
         selectAvatar: 0,
         newMessage: "",
-        // search: "", appoggio per la funzione filtro
+        // search: "",  
     },
 
     methods: {
@@ -128,10 +128,10 @@ let root = new Vue({
             }, 1000);
         },
 
-        // filterChat: function() {
+        // filterChat() {
         //     return this.contacts.filter(element => {
         //         return element.name.toLowerCase().includes(this.search.toLowerCase());
         //     });
-        // },   funzione filtro. Capire modifiche da effettuare affinchè tutte le componenti funzionino.
+        // },   
     },
 });
