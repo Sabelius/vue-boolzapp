@@ -91,7 +91,7 @@ let root = new Vue({
 
         selectAvatar: 0,
         newMessage: "",
-        search: "",  
+        search: "",
     },
 
     methods: {
@@ -134,6 +134,6 @@ let root = new Vue({
             return this.contacts.filter(element => {
                 return element.name.toLowerCase().includes(this.search.toLowerCase());
             });
-        },   
+        },
     },
 });
