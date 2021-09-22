@@ -89,11 +89,13 @@ let root = new Vue({
             },
         ],
 
-        selectAvatar: 0,
-        newMessage: "",
-        search: "",
+        selectAvatar: 0,   // indice dei contatti
+        newMessage: "",   // campo vuoto per la funzione di inserimento nuovi messaggi
+        search: "",      // campo vuoto per rendere possibile la ricerca filtrata dei contatti
     },
 
+    // implementazione per la funzione filtro che permette di mantenere l'indice dei contatti
+    // a 0 durante la ricerca
     watch: {
         search: function (value) {
             this.selectAvatar = 0;
@@ -101,16 +103,20 @@ let root = new Vue({
     },
 
     methods: {
-
+        
+        // funzione che imposta l'indice del contatto che viene cliccato
         selectChat: function (avatarIndex) {
             this.selectAvatar = avatarIndex;
             return this.selectAvatar;
         },
 
+        // funzione per inserire immagine contatto
         filteredImage: function (element) {
             return "img/avatar" + element.avatar + ".jpg";
         },
-
+        
+        // funzione che permette di inserire un nuovo messaggio nell'array messaggi
+        //  e automaticamente genera una risposta
         addNewMessage: function (selectAvatar) {
             let newTextMessage;
             newTextMessage = {
@@ -135,6 +141,7 @@ let root = new Vue({
         },
     },
 
+    // funzione che permette di filtrare i contatti
     computed: {
         filterChat() {
             return this.contacts.filter(element => {

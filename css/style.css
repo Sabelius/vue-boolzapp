@@ -93,6 +93,9 @@
     padding: 10px 10px 10px 20px;
     cursor: pointer;
 }
+.active {
+    background-color: rgb(233, 233, 233);
+}
 .right-side{
     width: 65%;
     height: 100%;
